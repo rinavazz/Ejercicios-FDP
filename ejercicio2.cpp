@@ -1,25 +1,11 @@
-/*Suma de Números
-Pide al usuario números hasta que ingrese 0. Luego, muestra la suma de todos los números ingresados.
-
-*/
-
 #include <iostream>
 using namespace std;
-
+// el objetivo del programa sera imprimir todos los numeros pares de 1 al 50 
 int main() {
-    int numero;
-    int suma = 0;
-
-    cout << "Ingresa numeros para sumarlos. Escribe 0 para terminar.\n";
-
-    cin >> numero;
-
-    while (numero != 0) {
-        suma += numero;
-        cin >> numero;
+    // Imprimir los números pares del 1 al 50 utilizando un ciclo
+    for (int i = 2; i <= 50; i += 2) {  
+        cout << i << endl;  
     }
-
-    cout << "La suma total es: " << suma << endl;
-
+    
     return 0;
 }

@@ -1,23 +1,28 @@
 #include <iostream>
 using namespace std;
-
+// El objetivo será Mostrar los primeros N términos de la serie de Fibonacci.
 int main() {
-    int numero;
-    int digitos = 0;
+    int N, a = 0, b = 1, c;
 
-    cout << "Ingrese un número entero positivo: ";
-    cin >> numero;
+    // Solicitar al usuario el número de términos de la serie de Fibonacci
+    cout << "Ingrese el número de términos de la serie de Fibonacci: ";
+    cin >> N;
 
-    if (numero == 0) {
-        digitos = 1;  // El 0 tiene un dígito
-    } else {
-        do {
-            numero = numero / 10;
-            digitos++;
-        } while (numero != 0);
+    // Verificar que N sea un número positivo
+    if (N <= 0) {
+        cout << "El número de términos debe ser un número positivo." << endl;
+        return 1;
     }
 
-    cout << "El número tiene " << digitos << " dígito(s)." << endl;
+    // Imprimir los primeros N términos de la serie de Fibonacci
+    cout << "Serie de Fibonacci: ";
+    for (int i = 1; i <= N; ++i) {
+        cout << a << " ";
+        c = a + b; // Sumar los dos últimos números
+        a = b;     // Actualizar a con el valor de b
+        b = c;     // Actualizar b con el nuevo valor c
+    }
+    cout << endl;
 
     return 0;
 }
